@@ -1,4 +1,3 @@
-
 import numpy as np
 import matplotlib
 
@@ -30,6 +29,7 @@ from services.config import (
     DEFAULT_THRESHOLD,
 )
 
+from services.config import DEFAULT_THRESHOLD
 
 # ============================================================
 # CALCULATE METRICS
@@ -215,12 +215,13 @@ def evaluate_models(
     print("=" * 75)
 
     for model_name, probabilities in model_probabilities.items():
-
-        metrics = calculate_metrics(
-            y_true,
-            probabilities,
-            threshold=threshold,
+        current_threshold = (
+            threshold.get(model_name, DEFAULT_THRESHOLD)
+            if isinstance(threshold, dict)
+            else threshold
         )
+
+        metrics = calculate_metrics(y_true, probabilities, threshold=current_threshold)
 
         all_metrics[model_name] = metrics
 

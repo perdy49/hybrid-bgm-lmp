@@ -72,14 +72,16 @@ USE_CLASS_WEIGHT = True
 
 LIGHTGBM_PARAMS = {
     "objective": "binary",
-    "n_estimators": 500,
-    "learning_rate": 0.03,
-    "num_leaves": 31,
+    "n_estimators": 1200,
+    "learning_rate": 0.02,
+    "num_leaves": 63,
     "max_depth": -1,
+    "min_child_samples": 80,
     "subsample": 0.8,
+    "subsample_freq": 1,
     "colsample_bytree": 0.8,
-    "reg_alpha": 0.1,
-    "reg_lambda": 1.0,
+    "reg_alpha": 0.5,
+    "reg_lambda": 2.0,
     "random_state": RANDOM_STATE,
     "n_jobs": -1,
     "verbosity": -1,
@@ -90,15 +92,15 @@ LIGHTGBM_PARAMS = {
 # MLP CONFIGURATION
 # =========================================================
 
-MLP_HIDDEN_UNITS = (128, 64, 32)
+MLP_HIDDEN_UNITS = (256, 128, 64, 32)
 
-MLP_DROPOUT_RATE = 0.3
-MLP_LEARNING_RATE = 0.001
+MLP_DROPOUT_RATE = 0.25
+MLP_LEARNING_RATE = 0.0005
 MLP_BATCH_SIZE = 512
-MLP_EPOCHS = 30
-MLP_VALIDATION_SPLIT = 0.2
+MLP_EPOCHS = 60
+MLP_VALIDATION_SPLIT = 0.15
 
-EARLY_STOPPING_PATIENCE = 5
+EARLY_STOPPING_PATIENCE = 8
 
 
 # =========================================================
