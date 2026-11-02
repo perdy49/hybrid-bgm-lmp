@@ -1,0 +1,107 @@
+# ==========================================
+# PYTHON CACHE
+# ==========================================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# ==========================================
+# PYTHON VIRTUAL ENVIRONMENT
+# ==========================================
+.venv/
+venv/
+env/
+ENV/
+
+# ==========================================
+# ENVIRONMENT VARIABLES & SECRETS
+# ==========================================
+.env
+.env.*
+!.env.example
+
+# ==========================================
+# DATASET - JANGAN UPLOAD KE GITHUB
+# ==========================================
+data/*
+!data/.gitkeep
+
+# Dataset CSV
+*.csv
+*.csv.gz
+*.csv.zip
+
+# Dataset dan data berukuran besar lainnya
+*.parquet
+*.feather
+*.h5
+*.hdf5
+*.arrow
+
+# ==========================================
+# TRAINED MODELS - JANGAN UPLOAD
+# ==========================================
+model/*
+!model/.gitkeep
+
+*.pkl
+*.pickle
+*.joblib
+*.keras
+*.h5
+*.hdf5
+*.onnx
+*.pt
+*.pth
+*.weights
+*.ckpt
+
+# ==========================================
+# TRAINING OUTPUT & EVALUATION
+# ==========================================
+results/*
+!results/.gitkeep
+
+# ==========================================
+# JUPYTER NOTEBOOK CACHE
+# ==========================================
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ==========================================
+# LOGS & TEMPORARY FILES
+# ==========================================
+*.log
+logs/
+tmp/
+temp/
+*.tmp
+
+# ==========================================
+# TESTING & COVERAGE
+# ==========================================
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ==========================================
+# EDITOR & IDE
+# ==========================================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ==========================================
+# OPERATING SYSTEM FILES
+# ==========================================
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ==========================================
+# BUILD & DISTRIBUTION
+# ==========================================
+build/
+dist/
+*.egg-info/
